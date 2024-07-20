@@ -7,11 +7,12 @@ class HomeScreen extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pantalla de Inicio'),
+        title: Text('Pantalla de Inicio', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.blueGrey,
       ),
       body: Center(
         child: Text(
-          'Bienvenido, $email',
+          'Bienvenido $email',
           style: TextStyle(fontSize: 20),
         ),
       ),

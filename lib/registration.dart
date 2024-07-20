@@ -6,7 +6,7 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
-  final _formKey = GlobalKey<FormState>();
+  final _RformKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
@@ -19,7 +19,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   String _password = '';
 
   void _register() {
-    if (_formKey.currentState!.validate()) {
+    if (_RformKey.currentState!.validate()) {
       print('Nombre: $_name');
       print('Correo: $_email');
       print('Teléfono: $_phone');
@@ -30,11 +30,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Registro')),
+      appBar: AppBar(title: Text('Registro', style: TextStyle(color: Colors.white)),
+      backgroundColor: Colors.blueGrey,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
-          key: _formKey,
+          key: _RformKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -108,6 +110,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _register,
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white, 
+                  backgroundColor: Colors.blue, // Color del texto del botón
+                  shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8), // Borde redondeado del botón
+                  ),
+                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 8), // Padding del botón
+                ),
                 child: Text('Registrarse'),
               ),
             ],
