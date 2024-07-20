@@ -41,6 +41,13 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+                  Center(
+                    child: CircleAvatar(
+                      radius: 50,
+                      backgroundColor: Colors.blue[200],
+                     // backgroundImage: AssetImage('assets/images/proyecto.png'), 
+                    ),
+                  ),
                     TextFormField(
                       controller: _emailController,
                       decoration: InputDecoration(labelText: 'Correo institucional'),
